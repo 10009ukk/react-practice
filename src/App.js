@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import { Context, Child } from './components/context/Context';
+import { Route, Routes } from "react-router-dom";
+import { About } from "./router/About";
+import { Home } from "./router/Home";
+import { NavBar } from "./router/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <Context>
-        <Child />
-      </Context>
-    </div>
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </>
   );
 }
 
