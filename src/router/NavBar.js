@@ -1,11 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
+
+  const navLinkStyle = ({ isActive }) => {
+      
+      return {
+        fontWeight: isActive ? "bold" : "normal",
+        textDecoration: isActive ? "none" : "underline" 
+      }
+  }
   return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <NavLink style={navLinkStyle} to="/">Home</NavLink>
+            <NavLink style={navLinkStyle} to="/about">About</NavLink>
         </nav>
     );
 };
+
+//NavLink 는 페이지 주소와, Link 에서의 'to'가 동일할때 class 를 active 해줌
